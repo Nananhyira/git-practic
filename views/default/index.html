@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>Current Images</h1>
+<ul>
+{{for upload in upload:}}
+{{=LI(A(upload.db_upload, _href=URL("show", args=upload.id)))}}
+{{pass}}
+</ul>
+            <ul class="main-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="show.html">FEATURED LISTING</a></li>
+              
+            </ul>
+

@@ -1,0 +1,52 @@
+{{extend 'layout.html'}}
+    {{include 'navbar.html'}}
+  <div class="hero-section">
+    <div class="hero-cover">
+      <div class='container'>
+        <div class='row hero-content'>    
+          <div class="container">
+            <h1 class="banner-text">Find a place to rent</h1>
+            <h3 class="banner-text">Search Real Estate for Parties, Houses, Condos, Apartments and more...</h3>
+            <h5 class="banner-text">EASY.SAFE.CONVENIENT</h5>
+          </div>
+  
+          <!-- Form element after slider -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="well well-md col-xs-12">
+                <p class="banner-text">Search for your dream apartment!</p>
+                <form class="form-inline" role="search" action="{{=URL('searchresult')}}" method="post">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter search keyword" style="width: 600px;" name="keyword" id="srch-term">
+                  </div>
+                  <button type="submit" class="btn btn-danger">SEARCH NOW</button>
+                </form>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container featured-properties">
+    <div class="row">
+      <h4>RECENT PROPERTIES</h4>
+      <br>
+      <!-- Loop this to display featured properties -->
+      {{for upload in uploads:}}
+      <div class="col-md-3" style="margin-bottom: 20px;">
+        <a href="{{=URL('details', args=upload.id)}}">
+          <div class="featured-item">
+            <img src="{{=URL('download', args=upload.db_upload)}}" alt="image of property" class="img-responsive">
+            <hr>
+            <h5>{{=upload.db_details}}</h5>
+            <p>{{=upload.db_location}}</p>
+            <p>GHS{{=upload.db_amount}}</p>
+          </div>
+        </a>
+      </div>
+      {{pass}}
+      <!-- loop ends here -->
+    </div>
+  </div>

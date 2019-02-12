@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+	{{include 'navbar.html'}}
+	<div class="container" style="margin-top: 40px;">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 item-details">
+				<img src="{{=URL('download', args=upload.db_upload)}}" class="card-img" class="img-responsive">
+				<hr>
+				<h4>{{=upload.db_details}}</h4>
+				<p>{{=upload.db_profile}}</p>
+				<p>{{=upload.db_title}}</p>
+				<p>{{=upload.db_house_type}}</p>
+			    <p>{{=upload.db_location}}</p>
+				<p>{{=upload.db_amount}}</p>
+		        <p>{{=upload.db_contact}}</p>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+

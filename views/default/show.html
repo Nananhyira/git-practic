@@ -1,0 +1,52 @@
+		<!DOCTYPE html>
+
+		<html>
+		<head>
+			<link rel="stylesheet" href="{{=URL('static','css/bootstrap.css')}}"/>
+			<link rel="stylesheet" href="{{=URL('static','css/styles.css')}}"/>
+			<title>searching</title>
+		</head>
+		<body>
+		<div class="container" style="margin:5%;">
+			<div class="row">
+				<form class="form1" role="search" action="{{=URL('searchresult')}}" method="post">
+    				<div class="input-group add-on">
+     					<input class="form-control" placeholder="search keyword" name="keyword" id="srch-term" type="text">
+    					<div class="input-group-btn">
+        					<button class="btn btn-primary build-btn" type="submit"><i class="fa fa-search"></i>Search</button>
+      					</div>
+   				 	</div>
+ 				</form>
+			</div>
+			<div id="topbar"> <marquee>RECENT PROPERTIES</marquee></div>
+			<div class = "row">
+			{{for upload in uploads:}}
+			<div class="col-md-3">
+				<div class="thumbnail">
+				<div style="width:200px; height:200px" class="card">
+		   			<img src="{{=URL('download', args=upload.db_upload)}}" class="card-img" class="img-responsive">
+           <a href="{{=URL('details',args=upload.db_upload)}}"><img src="{{=URL('details',args=upload.db_upload)}}"> </a>
+				<div style="font color:blue;">
+				{{=upload.db_details}}
+			    {{=upload.db_location}}
+				{{=upload.db_amount}}
+	
+			    </div>
+			
+			    </div>
+		    </div>
+		   
+		</div>
+		 {{pass}}
+		  </div>
+	
+</div>
+
+
+
+<script type="{{URL('static','js/jquery.js')}}"></script>
+<script type="{{URL('static','js/bootstrap.min.js')}}"></script>
+</body>
+</html>
+
+

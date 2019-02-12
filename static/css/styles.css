@@ -1,0 +1,44 @@
+.card-img{
+	width: 25rem;
+	height: 15rem;
+	font color:red;
+}
+.img{
+	margin: 10px;
+height: 50rem;
+width: 50;
+
+}
+
+#topbar{
+width: 1000px;
+margin: 10px auto;
+height: 100px;
+font-weight: bold;
+background-color:purple;
+font-size: 600%;
+color:yellow;
+text-align: center;
+border:2px solid;
+font font-weight:normal;
+}
+
+.col-md-12{
+
+
+
+
+}
+#det{
+
+width: 500px;
+margin: 10auto;
+height: 1000px;
+
+
+
+}
+.card{
+img size: 500;
+
+}
